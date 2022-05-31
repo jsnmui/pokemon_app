@@ -39,8 +39,8 @@
 
 
   // display all students
-    app.get("/learners", (req, res) => {
-      res.render("learners", { data: pokemon, pageTitle: "Students Page" });
+    app.get("/Index", (req, res) => {
+      res.render("Index", { data: pokemon, pageHeader: "See All The Pokemon!" });
     }); 
 
   
