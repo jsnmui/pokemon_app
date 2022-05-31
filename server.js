@@ -28,10 +28,8 @@
 
   // Root route
   app.get("/", (req, res) => {
-      res.render("home", {
-        pageTitle: "Students Home Page",
-        pageHeader: "Welcome to Students Home Page",
-      });
+    res.send('Welcome to the Pokemon App!');
+      
     });
 
   // display all students
