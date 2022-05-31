@@ -32,14 +32,11 @@
       
     });
 
- // display all pokemon as JSON
-   app.get("/pokemon", (req, res) => {
-    res.send(pokemon)
- }); 
-
+ 
 
   // display all pokemon
-    app.get("/Index", (req, res) => {
+    //  res.send(pokemon)
+    app.get("/pokemon", (req, res) => {
       res.render("Index", { data: pokemon, pageHeader: "See All The Pokemon!" });
     }); 
 
