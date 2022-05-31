@@ -40,14 +40,29 @@
       res.render("Index", { data: pokemon, pageHeader: "See All The Pokemon!" });
     }); 
 
+
+
+      // HTML Form
+   app.get("/pokemon/new", (req, res) => {
+    res.render("newpokemon");
+  });
+
+  // Create a new Fruit
+  app.post("/pokemon", (req, res) => {
+    console.log(req);
+    pokemon.push(req.body)
+    res.redirect('/pokemon')
+  });
+
  
 //show views of each pokemon
   app.get("/pokemon/:id", (req, res) => {
           
-          res.render("show", { data: pokemon, index: req.params.id, pageHeader:"Gotta Catch 'Em All" } );
+   res.render("show", { data: pokemon, index: req.params.id, pageHeader:"Gotta Catch 'Em All" } );
       
   }); 
 
+ 
 
     // App Listener
   app.listen(PORT, () => {
