@@ -4,7 +4,7 @@
   // import the controller function
   const getData = require("./Controllers/getData");
   // call getData
-  const studentsData = getData();
+  const pokemon = getData();
 
   // create an instance of express
   const app = express();
@@ -32,9 +32,15 @@
       
     });
 
+ // display all pokemon
+   app.get("/pokemon", (req, res) => {
+    res.send(pokemon)
+ }); 
+
+
   // display all students
     app.get("/learners", (req, res) => {
-      res.render("learners", { data: studentsData, pageTitle: "Students Page" });
+      res.render("learners", { data: pokemon, pageTitle: "Students Page" });
     }); 
 
   
@@ -42,7 +48,7 @@
   // display one student
   app.get("/learners/:id", (req, res) => {
   
-    const result = studentsData.filter(item => item.id === Number( req.params.id))
+    const result = pokemon.filter(item => item.id === Number( req.params.id))
     if (result[0] == undefined){
       res.status(404).render("404");
      } else {
