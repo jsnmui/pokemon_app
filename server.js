@@ -38,23 +38,25 @@
  }); 
 
 
-  // display all students
+  // display all pokemon
     app.get("/Index", (req, res) => {
       res.render("Index", { data: pokemon, pageHeader: "See All The Pokemon!" });
     }); 
 
   
 
-  // display one student
+ 
+  
+
+
   app.get("/pokemon/:id", (req, res) => {
-    res.send(req.params.id)  
-    const result = pokemon.filter(item => item.id === Number( req.params.id))
-    if (result[0] == undefined){
-      res.status(404).render("404");
-     } else {
-          res.render("show", { student: result[0], pageTitle: `Details for ${result[0].name}`  });
-     } 
+     
+ 
+     
+          res.render("show", { data: pokemon, index: req.params.id, pageHeader:"Gotta Catch 'Em All" } );
+      
   }); 
+
 
     // App Listener
   app.listen(PORT, () => {
