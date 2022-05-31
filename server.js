@@ -2,9 +2,9 @@
   // Loads express
   const express = require("express");
   // import the controller function
-  const getData = require("./Controllers/getData");
-  // call getData
-  const pokemon = getData();
+  
+  
+  const pokemon = require("./Models/pokemon");
 
   // create an instance of express
   const app = express();
