@@ -46,8 +46,8 @@
   
 
   // display one student
-  app.get("/learners/:id", (req, res) => {
-  
+  app.get("/pokemon/:id", (req, res) => {
+    res.send(req.params.id)  
     const result = pokemon.filter(item => item.id === Number( req.params.id))
     if (result[0] == undefined){
       res.status(404).render("404");
