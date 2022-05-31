@@ -44,7 +44,7 @@
     }); 
 
  
-
+//show views of each pokemon
   app.get("/pokemon/:id", (req, res) => {
           
           res.render("show", { data: pokemon, index: req.params.id, pageHeader:"Gotta Catch 'Em All" } );
