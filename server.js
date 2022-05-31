@@ -26,13 +26,13 @@
   app.set("view engine", "ejs");
   app.set("views", "./Views");
 
-  // Root route
+  // Root route 
   app.get("/", (req, res) => {
     res.send('Welcome to the Pokemon App!');
       
     });
 
- // display all pokemon
+ // display all pokemon as JSON
    app.get("/pokemon", (req, res) => {
     res.send(pokemon)
  }); 
@@ -43,16 +43,10 @@
       res.render("Index", { data: pokemon, pageHeader: "See All The Pokemon!" });
     }); 
 
-  
-
  
-  
-
 
   app.get("/pokemon/:id", (req, res) => {
-     
- 
-     
+          
           res.render("show", { data: pokemon, index: req.params.id, pageHeader:"Gotta Catch 'Em All" } );
       
   }); 
