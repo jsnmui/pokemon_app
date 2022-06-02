@@ -6,7 +6,7 @@
   
   const pokemon = require("./Models/pokemon");
 
-  // create an instance of express
+  //*==============SETUP create an instance of express
   const app = express();
   const PORT = 3000;
 
@@ -26,6 +26,8 @@
   app.set("view engine", "ejs");
   app.set("views", "./Views");
 
+  //* ROUTES
+
   // Root route 
   app.get("/", (req, res) => {
     res.send('Welcome to the Pokemon App!');
@@ -37,7 +39,10 @@
   // display all pokemon
     //  res.send(pokemon)
     app.get("/pokemon", (req, res) => {
-      res.render("Index", { data: pokemon, pageHeader: "See All The Pokemon!" });
+          res.render("Index", {  pageTitle: 'Pokemon',
+                                pageHeader: "See All The Pokemon!",
+                                data: pokemon
+          });
     }); 
 
 
