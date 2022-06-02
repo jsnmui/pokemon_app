@@ -8,14 +8,16 @@
 </head>
 <body>
     <h1><%= pageHeader %> </h1>
-    
+    <div id="new"> <a href ="/pokemon/new" >Create new Pokemon </a> </div>
    <ul>
         <% data.map( (pokemon, index) => { %>
                 <li>          
                     <%=pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)%> 
                 </li>
                     <a href ="/pokemon/<%= index%>" >Click for Details </a>
+                     
         <% } ) %>
+                  
    </ul>
 </body>
 </html>
