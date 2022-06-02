@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1><%= pageHeader %> </h1>
-    <h2><%= data[index].name.charAt(0).toUpperCase() + data[index].name.slice(1)%> </h2> 
-     <% if (data[index].img != undefined ) { %>
-        <div><img src =  <%=` ${data[index].img}.jpg` %>  width ="400" height="300" ></div>
+    <h2><%= data.name.charAt(0).toUpperCase() + data.name.slice(1)%> </h2> 
+     <% if (data.img != undefined ) { %>
+        <div><img src =  <%=` ${data.img}.jpg` %>  width ="400" height="300" ></div>
      <% } %>
     <a href ="/pokemon" > back </a>
    </ul>
