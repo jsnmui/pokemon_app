@@ -16,7 +16,7 @@
     console.log(`Running middleware function!!!`);
     next(); // got to the next middleware or to the response
   });
-  // JSON Middleware
+  // JSON Middleware parses the form
   app.use(express.json())
   // if we dont need to read data from the url 
   app.use(express.urlencoded({extended: false}))
