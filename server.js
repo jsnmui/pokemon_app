@@ -37,8 +37,10 @@
  
 
   // display all pokemon
-    //  res.send(pokemon)
+   
     app.get("/pokemon", (req, res) => {
+           //  res.send(pokemon)
+         
           res.render("Index", {  pageTitle: 'Pokemon',
                                 pageHeader: "See All The Pokemon!",
                                 data: pokemon
@@ -54,7 +56,7 @@
 
   // Create a new Fruit
   app.post("/pokemon", (req, res) => {
-    console.log(req);
+     
     pokemon.push(req.body)
     res.redirect('/pokemon')
   });
@@ -62,7 +64,7 @@
  
 //show views of each pokemon
   app.get("/pokemon/:id", (req, res) => {
-          
+  //  res.send(req.params.id)       
    res.render("show", { 
             pageTitle: 'Details',
             pageHeader:"Gotta Catch 'Em All", 
